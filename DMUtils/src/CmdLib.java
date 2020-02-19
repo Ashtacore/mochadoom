@@ -86,16 +86,18 @@ public class CmdLib {
 	{
 		int             i;
 		char    parm;
+		String	parmS;
 
 		for (i = 1;i<myargv.length;i++)
 		{
 			parm = myargv[i].charAt(0);
+			parmS = "" + parm;
 
 			if ( !isAlpha(parm) )  // skip - / \ etc.. in front of parm
-				if (!*++parm)
+				if (parm > 0)
 					continue;               // parm was only one char
 
-			if ( !stricmp(check,parm) )
+			if ( check.compareToIgnoreCase(parmS) != 0 )
 				return i;
 		}
 
