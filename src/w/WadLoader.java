@@ -37,6 +37,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.nio.ByteBuffer;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.function.IntFunction;
@@ -429,7 +430,7 @@ public class WadLoader implements IWadLoader {
 		}
 
 		if (numlumps == 0)
-			I.Error("W_InitFiles: no files found");
+			I.Error("W_InitFiles: no files found at" + Arrays.toString(filenames));
 
 		CoalesceMarkedResource("S_START", "S_END", li_namespace.ns_sprites);
 		CoalesceMarkedResource("F_START", "F_END", li_namespace.ns_flats);
